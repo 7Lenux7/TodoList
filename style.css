@@ -175,4 +175,28 @@
       align-items: center;
     }
   }
-  
+ /* Общие стили для кнопок */
+button {
+  padding: 8px 16px;
+  margin-left: 10px;
+  cursor: pointer;  /* Указатель мыши меняется на "руку", когда наводится на кнопку */
+  border: none;
+  border-radius: 4px;
+  background-color: #007BFF;  /* Синий фон для кнопок */
+  color: white;
+  font-size: 14px;
+  transition: background-color 0.3s ease;  /* Плавный переход для изменения фона */
+}
+
+button:hover {
+  background-color: #0056b3;  /* Более темный синий при наведении */
+}
+
+button:active {
+  background-color: #004085;  /* Еще более темный синий при клике */
+}
+
+button:disabled {
+  background-color: #ddd;  /* Серая кнопка для неактивных кнопок */
+  cursor: not-allowed;  /* Изменение курсора на "недоступно" */
+}

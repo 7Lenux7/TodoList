@@ -109,3 +109,25 @@ document.addEventListener('DOMContentLoaded', () => {
   renderActiveTasks();
   renderArchivedTasks();
 });
+document.addEventListener('DOMContentLoaded', () => {
+  // Получаем ссылку на кнопку переключения темы
+  const themeToggleButton = document.getElementById('themeToggleButton');
+  
+  // Проверяем сохранённую тему в localStorage
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    document.body.classList.toggle('dark', savedTheme === 'dark');
+    document.querySelector('.container').classList.toggle('dark', savedTheme === 'dark');
+    themeToggleButton.textContent = savedTheme === 'dark' ? 'Светлая тема' : 'Тёмная тема';
+  }
+
+  // Обработчик переключения темы
+  themeToggleButton.addEventListener('click', () => {
+    const isDark = document.body.classList.toggle('dark');
+    document.querySelector('.container').classList.toggle('dark');
+    themeToggleButton.textContent = isDark ? 'Светлая тема' : 'Тёмная тема';
+
+    // Сохраняем выбор пользователя
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+});

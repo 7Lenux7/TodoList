@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     taskList.innerHTML = '';
     tasks.forEach((task, index) => {
       const taskElement = document.createElement('li');
-      taskElement.classList.add('dark');  // Применяем темный стиль к каждой задаче
       taskElement.innerHTML = `
         <span class="task-text ${task.status}">${task.text}</span>
         <div>
@@ -53,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
     archivedList.innerHTML = '';
     archivedTasks.forEach((task) => {
       const taskElement = document.createElement('li');
-      taskElement.classList.add('dark');  // Применяем темный стиль к каждой задаче
       taskElement.innerHTML = `<span class="task-text completed">${task.text}</span>`;
       archivedList.appendChild(taskElement);
     });
@@ -111,9 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
   themeToggleButton.addEventListener('click', () => {
     const isDark = document.body.classList.toggle('dark');
     document.querySelector('.container').classList.toggle('dark');
-    themeToggleButton.textContent = isDark ? 'Светлая тема' : 'Тёмная тема';
-
-    // Сохраняем выбор темы
+    const icon = isDark ? 'fas fa-sun' : 'fas fa-moon';
+    themeToggleButton.innerHTML = `<i class="${icon}"></i>`; // Обновляем иконку
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
   });
 
@@ -125,6 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'dark') {
     document.body.classList.add('dark');
-    themeToggleButton.textContent = 'Светлая тема';
+    themeToggleButton.innerHTML = '<i class="fas fa-sun"></i>';
   }
 });

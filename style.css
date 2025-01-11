@@ -1,205 +1,181 @@
-/* Общее оформление страницы */
+/* Общие стили */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f7fc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  /* Контейнер, содержащий все элементы */
-  .container {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-  }
-  
-  /* Заголовок */
-  .title {
-    text-align: center;
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  /* Стили для вкладок (Активные / Архив) */
-  .tabs {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-  }
-  
-  .tab-button {
-    padding: 10px 20px;
-    background-color: #f0f0f0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-size: 16px;
-  }
-  
-  .tab-button.active {
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  .tab-button:hover {
-    background-color: #ddd;
-  }
-  
-  /* Ввод новой задачи */
-  .task-input {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  #taskInput {
-    width: 75%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  #addTaskButton {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-  }
-  
-  #addTaskButton:hover {
-    background-color: #45a049;
-  }
-  
-  /* Список задач */
-  .task-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-  }
-  
-  .task-list li {
-    background-color: #f9f9f9;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s;
-  }
-  
-  /* Стили для разных статусов задач */
-  .task-text {
-    font-size: 16px;
-  }
-  
-  .task-text.in-progress {
-    color: red;
-    font-weight: bold;
-  }
-  
-  .task-text.pause {
-    color: purple;
-    font-weight: bold;
-  }
-  
-  .task-text.completed {
-    color: green;
-    text-decoration: line-through;
-  }
-  
-  /* Кнопки для задач */
-  button {
-    padding: 5px 10px;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button.in-progress {
-    background-color: #FF9800;
-    color: white;
-  }
-  
-  button.pause {
-    background-color: #9C27B0;
-    color: white;
-  }
-  
-  button.complete {
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  button:hover {
-    opacity: 0.8;
-  }
-  
-  /* Адаптивность */
-  @media (max-width: 480px) {
-    .container {
-      padding: 20px;
-    }
-  
-    #taskInput {
-      width: 60%;
-    }
-  
-    #addTaskButton {
-      width: 35%;
-    }
-  
-    .task-input {
-      flex-direction: column;
-      gap: 10px;
-      align-items: center;
-    }
-  }
- /* Общие стили для кнопок */
-button {
-  padding: 8px 16px;
-  margin-left: 10px;
-  cursor: pointer;  /* Указатель мыши меняется на "руку", когда наводится на кнопку */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Заголовок */
+.title {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Вкладки */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
   border: none;
   border-radius: 4px;
-  background-color: #007BFF;  /* Синий фон для кнопок */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+.tab-button.active {
+  background-color: #4CAF50;
   color: white;
-  font-size: 14px;
-  transition: background-color 0.3s ease;  /* Плавный переход для изменения фона */
+}
+
+.tab-button:hover {
+  background-color: #ddd;
+}
+
+/* Ввод новой задачи */
+.task-input {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+#taskInput {
+  width: 75%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#addTaskButton {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+#addTaskButton:hover {
+  background-color: #45a049;
+}
+
+/* Список задач */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.task-list li {
+  background-color: #2a2a2a;
+  color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+/* Стили для разных статусов задач */
+.task-text {
+  font-size: 16px;
+}
+
+.task-text.in-progress {
+  color: red;
+  font-weight: bold;
+}
+
+.task-text.pause {
+  color: purple;
+  font-weight: bold;
+}
+
+.task-text.completed {
+  color: green;
+  text-decoration: line-through;
+}
+
+/* Кнопки для задач */
+button {
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button.in-progress {
+  background-color: #FF9800;
+  color: white;
+}
+
+button.pause {
+  background-color: #9C27B0;
+  color: white;
+}
+
+button.complete {
+  background-color: #4CAF50;
+  color: white;
 }
 
 button:hover {
-  background-color: #0056b3;  /* Более темный синий при наведении */
+  opacity: 0.8;
 }
 
-button:active {
-  background-color: #004085;  /* Еще более темный синий при клике */
+/* Адаптивность */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+
+  #taskInput {
+    width: 60%;
+  }
+
+  #addTaskButton {
+    width: 35%;
+  }
+
+  .task-input {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
 }
 
-button:disabled {
-  background-color: #ddd;  /* Серая кнопка для неактивных кнопок */
-  cursor: not-allowed;  /* Изменение курсора на "недоступно" */
-}
 /* Темная тема */
 body.dark {
   background-color: #121212;

@@ -167,7 +167,7 @@ button.delete {
 }
 
 button.delete:hover {
-  background-color: #c0392b;
+  background-color: #ad0606;
 }
 
 button:hover {
@@ -199,13 +199,13 @@ button.theme-btn {
   background-color: transparent;
   border: none;
   font-size: 24px;
-  color: #2d2d2e;
+  color: #000000;
   cursor: pointer;
   transition: color 0.3s;
 }
 
 body.dark .theme-btn {
-  color: rgb(238, 235, 231);
+  color: rgb(156, 5, 63);
 }
 
 .theme-switcher {

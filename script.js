@@ -50,10 +50,22 @@ document.addEventListener('DOMContentLoaded', () => {
   // Функция для рендеринга архива
   function renderArchivedTasks() {
     archivedList.innerHTML = '';
-    archivedTasks.forEach((task) => {
+    archivedTasks.forEach((task, index) => {
       const taskElement = document.createElement('li');
-      taskElement.innerHTML = `<span class="task-text completed">${task.text}</span>`;
+      taskElement.innerHTML = `
+        <span class="task-text completed">${task.text}</span>
+        <button class="delete" data-index="${index}">Удалить</button>
+      `;
       archivedList.appendChild(taskElement);
+    });
+
+    // Добавление обработчиков событий для кнопок удаления
+    const deleteButtons = archivedList.querySelectorAll('.delete');
+    deleteButtons.forEach((button) => {
+      button.addEventListener('click', (e) => {
+        const taskIndex = parseInt(e.target.getAttribute('data-index'), 10);
+        deleteArchivedTask(taskIndex);
+      });
     });
   }
 
@@ -73,6 +85,13 @@ document.addEventListener('DOMContentLoaded', () => {
     renderActiveTasks();
     renderArchivedTasks();
   };
+
+  // Функция для удаления задачи из архива
+  function deleteArchivedTask(index) {
+    archivedTasks.splice(index, 1); // Удаляем задачу из архива
+    saveTasksToLocalStorage(); // Сохраняем изменения
+    renderArchivedTasks(); // Обновляем список архива
+  }
 
   // Функция для добавления новой задачи
   addTaskButton.addEventListener('click', () => {

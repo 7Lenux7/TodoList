@@ -155,6 +155,21 @@ button.complete {
   color: white;
 }
 
+button.delete {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+button.delete:hover {
+  background-color: #c0392b;
+}
+
 button:hover {
   opacity: 0.8;
 }
